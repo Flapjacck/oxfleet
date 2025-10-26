@@ -15,9 +15,8 @@ const CareersCTA = () => {
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
-          transition={{ duration: 0.3 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3, delay: 1.2 }}
           className="max-w-4xl mx-auto text-center"
         >
           {/* Icon */}

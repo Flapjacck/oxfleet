@@ -1,26 +1,31 @@
 import { motion } from 'framer-motion';
-import { Briefcase, GraduationCap, TrendingUp, Users } from 'lucide-react';
+import { Briefcase, Heart, TrendingUp, Users, Award } from 'lucide-react';
 
 const benefits = [
   {
-    icon: GraduationCap,
-    title: 'Continuous Learning',
-    description: 'Professional development and training opportunities to advance your skills'
+    icon: TrendingUp,
+    title: 'Industry Leading Technology',
+    description: 'Work with cutting-edge equipment and innovative solutions'
   },
   {
-    icon: TrendingUp,
-    title: 'Career Growth',
-    description: 'Clear pathways for advancement and leadership opportunities'
+    icon: Award,
+    title: 'Competitive Wages',
+    description: 'Earn what you deserve with industry-leading compensation'
+  },
+  {
+    icon: Heart,
+    title: 'Health and Dental Benefits',
+    description: 'Comprehensive benefits package for you and your family'
   },
   {
     icon: Users,
-    title: 'Team Culture',
-    description: 'Work with a dedicated team of professionals who value excellence'
+    title: 'Supportive Team Atmosphere',
+    description: 'Join a collaborative team that values each member'
   },
   {
     icon: Briefcase,
-    title: 'Industry Leader',
-    description: 'Join North America\'s dry suction excavation experts'
+    title: 'Exciting Employee Programs',
+    description: 'Health and Wellness, Reward and Recognition programs'
   },
 ];
 
@@ -37,17 +42,17 @@ const Careers = () => {
             className="max-w-4xl"
           >
             <h1 className="text-5xl md:text-6xl font-bold mb-6 tracking-wide">
-              JOIN OUR TEAM
+              JOIN OUR GROWING TEAM!
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
-              Build your career with a company that values character, service, innovation, and community. We're looking for skilled professionals to join our growing team.
+              We are always looking for outstanding people. Apply today!
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Why Join Us */}
-      <section className="py-20 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
+      <section className="py-16 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#f15a29] rounded-full blur-3xl"></div>
@@ -56,38 +61,35 @@ const Careers = () => {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
+            
             transition={{ duration: 0.3 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-6">
-              WHY WORK WITH US
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We believe in investing in our people and creating an environment where you can thrive
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed mb-10">
+              We understand the importance of providing high-level service to customers. Our culture is focused on learning and promoting leadership among our workforce. We are always looking for outstanding individuals to join our team!
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="flex flex-wrap justify-center gap-7 max-w-6xl mx-auto">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
                 <motion.div
                   key={benefit.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="text-center group"
+                  className="text-center group w-full md:w-[calc(50%-14px)] lg:w-[calc(33.333%-19px)]"
                 >
                 <div className="mb-6 inline-block p-6 bg-linear-to-br from-gray-50 to-white rounded-full group-hover:from-[#f15a29] group-hover:to-[#d94d1f] transition-all duration-500 shadow-lg group-hover:shadow-xl transform group-hover:scale-110">
-                    <Icon size={40} strokeWidth={2} className="text-[#f15a29] group-hover:text-white transition-colors" />
+                    <Icon size={44} strokeWidth={2} className="text-[#f15a29] group-hover:text-white transition-colors" />
                   </div>
                   <h3 className="text-xl font-bold text-[#111111] mb-3">
                     {benefit.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-700 text-base leading-snug">
                     {benefit.description}
                   </p>
                 </motion.div>
@@ -98,7 +100,7 @@ const Careers = () => {
       </section>
 
       {/* Job Postings */}
-      <section className="py-20 bg-linear-to-br from-gray-100 via-gray-50 to-gray-100 relative overflow-hidden">
+      <section className="py-16 bg-linear-to-br from-gray-100 via-gray-50 to-gray-100 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[#f15a29] rounded-full blur-3xl"></div>
@@ -106,79 +108,35 @@ const Careers = () => {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
+            
             transition={{ duration: 0.3 }}
-            className="text-center mb-12"
+            className="text-center mb-10"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-6">
-              CURRENT OPENINGS
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-8">
+              JOB POSTINGS
             </h2>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto space-y-6">
-            {/* Job Card */}
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+              animate={{ opacity: 1, y: 0 }}
+              
               transition={{ duration: 0.3 }}
-              className="bg-white rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#f15a29] transform hover:-translate-y-2 hover:scale-[1.01]"
+              className="text-center"
             >
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                <div>
-                  <h3 className="text-2xl font-bold text-[#111111] mb-3">
-                    310T Journeyman Technician
-                  </h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
-                    We're seeking a certified 310T Journeyman to join our team of expert technicians. Work on a diverse fleet including heavy-duty trucks, hydrovacs, and specialty equipment.
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold">
-                      Full-Time
-                    </span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold">
-                      Dundas, ON
-                    </span>
-                    <span className="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm font-semibold">
-                      Competitive Salary
-                    </span>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-3 lg:shrink-0">
-                  <a
-                    href="mailto:info@ox-equipment.com?subject=Application for 310T Journeyman Position"
-                    className="bg-[#f15a29] hover:bg-[#d94d1f] text-white px-6 py-3 rounded-lg font-semibold text-center transition-colors whitespace-nowrap"
-                  >
-                    Apply Now
-                  </a>
-                  <a
-                    href="tel:8882904044"
-                    className="bg-white hover:bg-gray-50 text-[#111111] border-2 border-gray-300 px-6 py-3 rounded-lg font-semibold text-center transition-colors whitespace-nowrap"
-                  >
-                    Call to Inquire
-                  </a>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* Additional positions placeholder */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="bg-white rounded-xl p-8 shadow-lg text-center border-2 border-dashed border-gray-300"
-            >
-              <p className="text-gray-600 text-lg">
-                Don't see a position that fits? We're always looking for talented individuals.
-              </p>
               <a
-                href="mailto:info@ox-equipment.com?subject=General Career Inquiry"
-                className="inline-block mt-4 text-[#f15a29] font-semibold hover:underline"
+                href="https://bartels-group.com/careers/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#f15a29] hover:bg-[#d94d1f] text-white px-12 py-5 rounded-lg font-bold text-xl transition-all shadow-xl hover:shadow-2xl transform hover:scale-105"
               >
-                Send us your resume →
+                View Current Openings
               </a>
+              <p className="text-gray-600 mt-6 text-lg">
+                Click above to see all available positions
+              </p>
             </motion.div>
           </div>
         </div>
@@ -189,29 +147,29 @@ const Careers = () => {
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
+            
             transition={{ duration: 0.3 }}
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              READY TO GET STARTED?
+              WANT TO JOIN OUR TEAM?
             </h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Take the next step in your career. Contact us today to learn more about opportunities at Ox FleetCare.
+              Get in touch with us today to learn more about career opportunities.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="mailto:info@ox-equipment.com"
                 className="bg-[#f15a29] hover:bg-[#d94d1f] text-white px-8 py-4 rounded-lg font-bold uppercase text-sm tracking-wide transition-all shadow-lg hover:shadow-xl hover:shadow-orange-900/50"
               >
-                Email Your Resume
+                Email Us
               </a>
               <a
                 href="tel:8882904044"
                 className="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg font-bold uppercase text-sm tracking-wide transition-all border-2 border-white/30 hover:border-white/50"
               >
-                Call (888) 290-4044
+                Call Us
               </a>
             </div>
           </motion.div>

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Phone, Mail, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navLinks = [
     { name: 'Services', path: '/services' },
@@ -31,39 +32,44 @@ const Header = () => {
       </div>
 
       {/* Main Navigation */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-4 py-2">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <img 
               src="/images/logo-banner-06.png" 
               alt="Ox FleetCare" 
-              className="h-12 md:h-16 w-auto"
+              className="h-16 md:h-20 w-auto"
             />
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-white hover:text-[#f15a29] transition-colors font-semibold tracking-wide uppercase text-sm"
-              >
-                {link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = location.pathname === link.path;
+              return (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`font-semibold tracking-wide uppercase text-sm transition-colors relative ${
+                    isActive 
+                      ? 'text-[#f15a29]' 
+                      : 'text-white hover:text-[#f15a29]'
+                  }`}
+                >
+                  {link.name}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeIndicator"
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#f15a29]"
+                      initial={false}
+                      transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </nav>
-
-          {/* CTA Buttons */}
-          <div className="hidden lg:flex items-center gap-4">
-            <Link
-              to="/sales"
-              className="bg-[#f15a29] hover:bg-[#d94d1f] text-white px-6 py-2 rounded-md font-semibold uppercase text-sm tracking-wide transition-colors"
-            >
-              View Inventory
-            </Link>
-          </div>
 
           {/* Mobile Menu Button */}
           <button
@@ -87,23 +93,24 @@ const Header = () => {
             className="lg:hidden overflow-hidden bg-[#1a1a1a]"
           >
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-white hover:text-[#f15a29] transition-colors font-semibold tracking-wide uppercase text-sm py-2 border-b border-gray-800"
-                >
-                  {link.name}
-                </Link>
-              ))}
-              <Link
-                to="/sales"
-                onClick={() => setIsMenuOpen(false)}
-                className="bg-[#f15a29] hover:bg-[#d94d1f] text-white px-6 py-3 rounded-md font-semibold uppercase text-sm tracking-wide transition-colors text-center mt-4"
-              >
-                View Inventory
-              </Link>
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.path;
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsMenuOpen(false)}
+                    className={`font-semibold tracking-wide uppercase text-sm py-2 border-b border-gray-800 transition-colors ${
+                      isActive
+                        ? 'text-[#f15a29]'
+                        : 'text-white hover:text-[#f15a29]'
+                    }`}
+                  >
+                    {link.name}
+                    {isActive && ' •'}
+                  </Link>
+                );
+              })}
             </nav>
           </motion.div>
         )}

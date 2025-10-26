@@ -6,21 +6,21 @@ const services = [
   {
     icon: Wrench,
     title: 'REPAIRS',
-    description: 'General repairs on autos, light and heavy-duty trucks, Tanker trailers, Vac trailers, Hydro Vacs, SE\'s, and other specialty equipment.',
+    description: 'General repairs on autos, light and heavy-duty trucks, tanker trailers, vac trailers, hydro vacs, specialty equipment, and more.',
     link: '/services',
     gradient: 'from-red-600 to-red-800',
   },
   {
     icon: Settings,
     title: 'MAINTENANCE',
-    description: 'General maintenance on autos, light and heavy-duty trucks, Tanker trailers, Vac trailers, Hydro Vacs, SE\'s, and other specialty equipment.',
+    description: 'Comprehensive maintenance programs including preventative maintenance, safety inspections, and specialized system service.',
     link: '/services',
     gradient: 'from-gray-700 to-gray-900',
   },
   {
     icon: ShoppingCart,
     title: 'SALES',
-    description: 'Our fleet vehicle remarketing program offers a variety of equipment for sale, both new and used.',
+    description: 'Our fleet vehicle remarketing program offers pre-owned equipment including hydro vacs, trailers, and specialty equipment. All vehicles sold "As Is".',
     link: '/sales',
     gradient: 'from-red-800 to-black',
   },
@@ -42,9 +42,8 @@ const ServicesCards = () => {
               <motion.div
                 key={service.title}
                 initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3, margin: "0px 0px -100px 0px" }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               >
                 <Link to={service.link} className="group block h-full">
                   <div className={`relative h-full bg-linear-to-br ${service.gradient} rounded-2xl p-8 text-white overflow-hidden shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.4)] transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02]`}>

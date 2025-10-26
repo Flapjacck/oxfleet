@@ -46,60 +46,60 @@ const Contact = () => {
       </section>
 
       {/* Contact Info & Form */}
-      <section className="py-20 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
+      <section className="py-16 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-[#f15a29] rounded-full blur-3xl"></div>
           <div className="absolute bottom-1/4 right-0 w-[500px] h-[500px] bg-[#111111] rounded-full blur-3xl"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+              animate={{ opacity: 1, x: 0 }}
+              
               transition={{ duration: 0.3 }}
             >
               <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-8">
                 GET IN TOUCH
               </h2>
               
-              <div className="space-y-8 mb-12">
+              <div className="space-y-7 mb-10">
                 {/* Phone */}
-                <div className="flex items-start gap-4">
-                  <div className="p-4 bg-[#f15a29] text-white rounded-xl">
-                    <Phone size={28} strokeWidth={2} />
+                <div className="flex items-start gap-5">
+                  <div className="p-4 bg-[#f15a29] text-white rounded-xl shrink-0">
+                    <Phone size={32} strokeWidth={2} />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#111111] mb-2">Phone</h3>
-                    <a href="tel:8882904044" className="text-gray-600 hover:text-[#f15a29] transition-colors text-lg">
+                    <a href="tel:8882904044" className="text-gray-700 hover:text-[#f15a29] transition-colors text-lg">
                       (888) 290-4044
                     </a>
                   </div>
                 </div>
 
                 {/* Email */}
-                <div className="flex items-start gap-4">
-                  <div className="p-4 bg-[#f15a29] text-white rounded-xl">
-                    <Mail size={28} strokeWidth={2} />
+                <div className="flex items-start gap-5">
+                  <div className="p-4 bg-[#f15a29] text-white rounded-xl shrink-0">
+                    <Mail size={32} strokeWidth={2} />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#111111] mb-2">Email</h3>
-                    <a href="mailto:info@ox-equipment.com" className="text-gray-600 hover:text-[#f15a29] transition-colors text-lg break-all">
+                    <a href="mailto:info@ox-equipment.com" className="text-gray-700 hover:text-[#f15a29] transition-colors text-lg break-all">
                       INFO@OX-EQUIPMENT.COM
                     </a>
                   </div>
                 </div>
 
                 {/* Address */}
-                <div className="flex items-start gap-4">
-                  <div className="p-4 bg-[#f15a29] text-white rounded-xl">
-                    <MapPin size={28} strokeWidth={2} />
+                <div className="flex items-start gap-5">
+                  <div className="p-4 bg-[#f15a29] text-white rounded-xl shrink-0">
+                    <MapPin size={32} strokeWidth={2} />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#111111] mb-2">Location</h3>
-                    <p className="text-gray-600 text-lg">
+                    <p className="text-gray-700 text-lg leading-relaxed">
                       466 HWY 52<br />
                       Dundas, ON L9H 5E2<br />
                       Canada
@@ -109,9 +109,9 @@ const Contact = () => {
               </div>
 
               {/* Hours */}
-              <div className="bg-gray-50 rounded-xl p-6">
+              <div className="bg-gray-50 rounded-xl p-7">
                 <h3 className="text-xl font-bold text-[#111111] mb-4">Business Hours</h3>
-                <div className="space-y-2 text-gray-600">
+                <div className="space-y-2.5 text-gray-700 text-base">
                   <div className="flex justify-between">
                     <span>Monday - Friday:</span>
                     <span className="font-semibold">8:00 AM - 5:00 PM</span>
@@ -127,17 +127,17 @@ const Contact = () => {
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+              animate={{ opacity: 1, x: 0 }}
+              
               transition={{ duration: 0.3 }}
             >
               <div className="bg-gray-50 rounded-2xl p-8">
                 <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-6">
-                  SEND US A MESSAGE
+                  SEND A MESSAGE
                 </h2>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="name" className="block text-base font-semibold text-gray-700 mb-2">
                       Name *
                     </label>
                     <input
@@ -147,13 +147,13 @@ const Contact = () => {
                       required
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3.5 text-base rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors"
                       placeholder="Your name"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="email" className="block text-base font-semibold text-gray-700 mb-2">
                       Email *
                     </label>
                     <input
@@ -163,13 +163,13 @@ const Contact = () => {
                       required
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3.5 text-base rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors"
                       placeholder="your.email@example.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="phone" className="block text-base font-semibold text-gray-700 mb-2">
                       Phone
                     </label>
                     <input
@@ -178,13 +178,13 @@ const Contact = () => {
                       name="phone"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors"
+                      className="w-full px-4 py-3.5 text-base rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors"
                       placeholder="(123) 456-7890"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="message" className="block text-base font-semibold text-gray-700 mb-2">
                       Message *
                     </label>
                     <textarea
@@ -193,15 +193,15 @@ const Contact = () => {
                       required
                       value={formData.message}
                       onChange={handleChange}
-                      rows={6}
-                      className="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors resize-none"
+                      rows={5}
+                      className="w-full px-4 py-3.5 text-base rounded-lg border-2 border-gray-300 focus:border-[#f15a29] focus:outline-none transition-colors resize-none"
                       placeholder="How can we help you?"
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full bg-[#f15a29] hover:bg-[#d94d1f] text-white px-8 py-4 rounded-lg font-bold uppercase text-sm tracking-wide transition-all shadow-lg hover:shadow-xl hover:shadow-orange-900/50 flex items-center justify-center gap-2"
+                    className="w-full bg-[#f15a29] hover:bg-[#d94d1f] text-white px-8 py-4 rounded-lg font-bold uppercase text-base tracking-wide transition-all shadow-lg hover:shadow-xl hover:shadow-orange-900/50 flex items-center justify-center gap-2"
                   >
                     <Send size={20} />
                     Send Message
@@ -214,7 +214,7 @@ const Contact = () => {
       </section>
 
       {/* Map Section */}
-      <section className="py-20 bg-linear-to-br from-gray-100 via-gray-50 to-gray-100 relative overflow-hidden">
+      <section className="py-16 bg-linear-to-br from-gray-100 via-gray-50 to-gray-100 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-[#f15a29] rounded-full blur-3xl"></div>
@@ -222,10 +222,10 @@ const Contact = () => {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
+            
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-2xl overflow-hidden shadow-xl"
+            className="bg-white rounded-2xl overflow-hidden shadow-xl max-w-6xl mx-auto"
           >
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.869647886976!2d-79.96789!3d43.26667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882c9b4c5e5e5e5e%3A0x5e5e5e5e5e5e5e5e!2s466%20Highway%2052%2C%20Dundas%2C%20ON%20L9H%205E2!5e0!3m2!1sen!2sca!4v1234567890"

@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
-    <section className="relative bg-linear-to-br from-[#111111] via-[#1a1a1a] to-[#111111] text-white overflow-hidden">
+    <section className="relative bg-linear-to-br from-[#111111] via-[#1a1a1a] to-[#111111] text-white overflow-hidden h-[calc(100vh-7rem)] md:h-[calc(100vh-8rem)]">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 opacity-20">
         <img 
@@ -43,7 +43,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="relative container mx-auto px-4 py-20 md:py-32">
+      <div className="relative container mx-auto px-4 h-full flex items-center">
         <div className="max-w-4xl">
           {/* Main Headline */}
           <motion.div
@@ -99,13 +99,11 @@ const Hero = () => {
           animate={{ opacity: 1, y: [0, 10, 0] }}
           transition={{ 
             opacity: { delay: 1, duration: 0.5 },
-            y: { repeat: Infinity, duration: 1.0, ease: "easeInOut" }
+            y: { repeat: Infinity, duration: 2.0, ease: "easeInOut" }
           }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-2">
-            <div className="w-1 h-3 bg-white rounded-full"></div>
-          </div>
+          <ChevronDown className="text-white/50" size={32} />
         </motion.div>
       </div>
     </section>

@@ -52,7 +52,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
+      <section className="py-16 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#f15a29] rounded-full blur-3xl"></div>
@@ -61,38 +61,38 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
+            
             transition={{ duration: 0.3 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-5">
               OUR VALUES
             </h2>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
             {values.map((value, index) => {
               const Icon = value.icon;
               return (
                 <motion.div
                   key={value.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  
                   transition={{ duration: 0.5, delay: index * 0.05 }}
                   className="group"
                 >
-                  <div className="h-full p-6 bg-linear-to-br from-white to-gray-50 rounded-xl hover:from-gray-50 hover:to-white hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#f15a29] transform hover:-translate-y-2 hover:scale-[1.02]">
-                    <div className="flex items-start gap-4">
-                      <div className="p-3 bg-[#f15a29] text-white rounded-lg group-hover:scale-110 transition-transform">
-                        <Icon size={28} strokeWidth={2} />
+                  <div className="h-full p-7 bg-linear-to-br from-white to-gray-50 rounded-xl hover:from-gray-50 hover:to-white hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#f15a29] transform hover:-translate-y-2 hover:scale-[1.02]">
+                    <div className="flex items-start gap-5">
+                      <div className="p-4 bg-[#f15a29] text-white rounded-lg group-hover:scale-110 transition-transform shrink-0">
+                        <Icon size={32} strokeWidth={2} />
                       </div>
                       <div>
-                        <h3 className="text-xl font-bold text-[#111111] mb-2">
+                        <h3 className="text-xl font-bold text-[#111111] mb-2.5">
                           {value.title}
                         </h3>
-                        <p className="text-gray-600">
+                        <p className="text-gray-700 text-lg leading-snug">
                           {value.description}
                         </p>
                       </div>
@@ -104,40 +104,40 @@ const About = () => {
           </div>
 
           {/* Mission & Vision */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+              animate={{ opacity: 1, x: 0 }}
+              
               transition={{ duration: 0.3 }}
-              className="bg-linear-to-br from-[#111111] to-[#1a1a1a] text-white rounded-2xl p-8 md:p-10"
+              className="bg-linear-to-br from-[#111111] to-[#1a1a1a] text-white rounded-2xl p-9"
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-5">
                 <div className="p-3 bg-[#f15a29] rounded-xl">
-                  <Target size={32} strokeWidth={2} />
+                  <Target size={36} strokeWidth={2} />
                 </div>
                 <h3 className="text-3xl font-bold">OUR MISSION</h3>
               </div>
-              <p className="text-gray-300 text-lg leading-relaxed">
-                To optimize fleet performance through proactive fleet management, expert repairs, comprehensive maintenance programs, and unwavering commitment to safety and quality. We strive to be the trusted partner that keeps your operations running smoothly and efficiently.
+              <p className="text-gray-200 text-lg leading-relaxed">
+                Optimizing fleet performance through proactive management, expert repairs, and unwavering commitment to safety. We're the trusted partner that keeps your operations running efficiently.
               </p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+              animate={{ opacity: 1, x: 0 }}
+              
               transition={{ duration: 0.3 }}
-              className="bg-linear-to-br from-[#f15a29] to-[#d94d1f] text-white rounded-2xl p-8 md:p-10"
+              className="bg-linear-to-br from-[#f15a29] to-[#d94d1f] text-white rounded-2xl p-9"
             >
-              <div className="flex items-center gap-4 mb-6">
+              <div className="flex items-center gap-4 mb-5">
                 <div className="p-3 bg-white/20 rounded-xl">
-                  <Eye size={32} strokeWidth={2} />
+                  <Eye size={36} strokeWidth={2} />
                 </div>
                 <h3 className="text-3xl font-bold">OUR VISION</h3>
               </div>
-              <p className="text-gray-100 text-lg leading-relaxed">
-                To be recognized as North America's leading fleet care provider through people of character, exceptional service, continuous innovation, and positive impact on the communities we serve. We envision a future where every fleet operates at peak performance.
+              <p className="text-white text-lg leading-relaxed">
+                To be North America's leading fleet care provider through exceptional service, innovation, and positive community impact. Every fleet operating at peak performance.
               </p>
             </motion.div>
           </div>
@@ -145,7 +145,7 @@ const About = () => {
       </section>
 
       {/* Areas of Work */}
-      <section className="py-20 bg-linear-to-br from-gray-100 via-gray-50 to-gray-100 relative overflow-hidden">
+      <section className="py-16 bg-linear-to-br from-gray-100 via-gray-50 to-gray-100 relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 opacity-[0.02]">
           <div className="absolute top-1/4 right-0 w-[600px] h-[600px] bg-[#f15a29] rounded-full blur-3xl"></div>
@@ -153,40 +153,40 @@ const About = () => {
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
+            
             transition={{ duration: 0.3 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-5">
               AREAS OF WORK
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive fleet solutions from acquisition to remarketing
+            <p className="text-2xl text-gray-700 max-w-3xl mx-auto font-medium">
+              Complete fleet solutions from acquisition to remarketing
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto">
             {areasOfWork.map((area, index) => {
               const Icon = area.icon;
               return (
                 <motion.div
                   key={area.title}
                   initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+                  animate={{ opacity: 1, y: 0 }}
+                  
                   transition={{ duration: 0.5, delay: index * 0.05 }}
-                  className="bg-white rounded-xl p-6 hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#f15a29] transform hover:-translate-y-1 hover:scale-[1.02]"
+                  className="bg-white rounded-xl p-7 hover:shadow-2xl transition-all duration-500 border-2 border-gray-100 hover:border-[#f15a29] transform hover:-translate-y-1 hover:scale-[1.02]"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="p-3 bg-gray-100 text-[#f15a29] rounded-lg">
-                      <Icon size={24} strokeWidth={2} />
+                    <div className="p-3 bg-gray-100 text-[#f15a29] rounded-lg shrink-0">
+                      <Icon size={28} strokeWidth={2} />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-[#111111] mb-2">
+                      <h3 className="text-xl font-bold text-[#111111] mb-2.5">
                         {area.title}
                       </h3>
-                      <p className="text-gray-600 text-sm">
+                      <p className="text-gray-700 text-base leading-snug">
                         {area.description}
                       </p>
                     </div>
@@ -199,38 +199,38 @@ const About = () => {
       </section>
 
       {/* Capabilities */}
-      <section className="py-20 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
+      <section className="py-16 bg-linear-to-br from-white via-gray-50 to-white relative overflow-hidden">
         {/* Background decoration */}
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-[#111111] rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-1/3 w-[500px] h-[500px] bg-[#f15a29] rounded-full blur-3xl"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center max-w-6xl mx-auto">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+              animate={{ opacity: 1, x: 0 }}
+              
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#111111] mb-5">
                 WHAT WE OFFER
               </h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                State-of-the-art facility and expert team equipped to handle all your fleet needs
+              <p className="text-2xl text-gray-700 mb-8 leading-relaxed font-medium">
+                State-of-the-art facility with expert team
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {capabilities.map((capability, index) => (
                   <motion.div
                     key={capability}
                     initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+                    animate={{ opacity: 1, x: 0 }}
+                    
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="flex items-start gap-3"
                   >
-                    <CheckCircle2 className="text-[#f15a29] shrink-0 mt-1" size={20} />
-                    <span className="text-gray-700">{capability}</span>
+                    <CheckCircle2 className="text-[#f15a29] shrink-0 mt-0.5" size={24} />
+                    <span className="text-gray-800 text-lg leading-tight">{capability}</span>
                   </motion.div>
                 ))}
               </div>
@@ -238,8 +238,8 @@ const About = () => {
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+              animate={{ opacity: 1, x: 0 }}
+              
               transition={{ duration: 0.3 }}
             >
               <img 
@@ -257,8 +257,8 @@ const About = () => {
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2, margin: "0px 0px -50px 0px" }}
+            animate={{ opacity: 1, y: 0 }}
+            
             transition={{ duration: 0.3 }}
             className="max-w-4xl mx-auto text-center"
           >
